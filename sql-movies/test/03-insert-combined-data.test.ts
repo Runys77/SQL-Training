@@ -11,7 +11,7 @@ import { Rating } from "../src/data/types";
 import { minutes } from "./utils";
 
 const insertRatings = (movieId: number, ratings: Rating[]) => {
-  throw new Error(`todo`);
+  return ()
 };
 
 describe("Insert Combined Data", () => {
