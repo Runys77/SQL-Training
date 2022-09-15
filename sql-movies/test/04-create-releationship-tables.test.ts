@@ -10,7 +10,7 @@ import { Database } from "../src/database";
 import { tableInfo } from "../src/queries/table-info";
 import { minutes, Log } from "./utils";
 
-const CREATE_MOVIE_GENRES_TABLE = ``;
+const CREATE_MOVIE_GENRES_TABLE = `create table`;
 
 const CREATE_MOVIE_ACTORS_TABLE = ``;
 

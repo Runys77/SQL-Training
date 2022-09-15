@@ -49,11 +49,11 @@ export const selectMovie = (imdbId: string): string => {
 };
 
 export const selectMovieId = (imdbId: string): string => {
-  return(`SELECT * FROM MOVIES WHERE imdb_id = '${imdbId}'`);
+  return(`SELECT id FROM MOVIES WHERE imdb_id = '${imdbId}'`);
 };
 
 export const selectRatingsByUserID = (userId: number): string => {
-  return(`SELECT user_id FROM MOVIE_RATINGS WHERE user_id = '${userId}'`);
+  return(`SELECT * FROM MOVIE_RATINGS WHERE user_id = '${userId}'`);
 };
 
 export const selectGenresByMovieId = (movieId: number): string => {
