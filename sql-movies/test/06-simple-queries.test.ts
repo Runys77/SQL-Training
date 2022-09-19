@@ -1,3 +1,4 @@
+import { relativeTimeRounding } from "moment";
 import { Database } from "../src/database";
 import { minutes } from "./utils";
 
@@ -96,7 +97,12 @@ describe("Simple Queries", () => {
   it(
     "should select count of movies released every year",
     async done => {
-      const query = `SELECT COUNT(*) as count FROM movies WHERE release_date  `;
+      const query =   `SELECT COUNT(strftime('%Y', release_date)) AS count,
+      strftime('%Y', release_date) AS year
+      FROM movies 
+      GROUP BY year 
+      ORDER BY year
+      DESC`;
       const result = await db.selectMultipleRows(query);
 
       expect(result.length).toBe(8);
@@ -152,7 +158,11 @@ describe("Simple Queries", () => {
   it(
     "should select count of ratings left each month",
     async done => {
-      const query = `todo`;
+      const query = `SELECT COUNT(rating) AS count, 
+      strftime('%m', time_created) AS month
+      FROM movie_ratings 
+      GROUP BY month
+      ORDER BY count DESC`;
       const result = await db.selectMultipleRows(query);
 
       expect(result).toEqual([
