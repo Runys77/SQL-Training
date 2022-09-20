@@ -9,7 +9,7 @@ describe("Queries Across Tables", () => {
     }, minutes(1));
 
     it("should select count of apps which have free pricing plan", async done => {
-        const query = `todo`;
+        const query = ``;
         const result = await db.selectSingleRow(query);
         expect(result).toEqual({
             count: 1112

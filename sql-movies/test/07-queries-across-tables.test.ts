@@ -130,7 +130,8 @@ describe("Queries Across Tables", () => {
       INNER JOIN genres ON genres.id = movie_genres.genre_id
       WHERE rating = 5
       GROUP BY genre
-      ORDER BY five_stars_count DESC
+      ORDER BY five_stars_count 
+      DESC
       LIMIT 3`;
       const result = await db.selectMultipleRows(query);
 
