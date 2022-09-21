@@ -32,7 +32,7 @@ describe("Update Statements", () => {
         const query = `UPDATE reviews
         SET developer_reply = 'test reply',
         developer_reply_date = '${timeStamp}'
-        WHERE app_id = ${review.app_id} AND author = '${review.author}'`;
+        WHERE app_id = ${review.app_id} AND author = ${review.author}`;
         try {
             await db.execute(query);
         } catch (e) { console.log(e); };
