@@ -36,7 +36,7 @@ describe("Simple Queries", () => {
 
     it("should select count of reviews created in year 2014, 2015 and 2016", async done => {
         const query = `SELECT COUNT() AS review_count, 
-        SUBSTR(date_created, 7) AS year
+        SUBSTR(date_created, 7, 4) AS year
         FROM reviews
         WHERE year IN ('2014','2015','2016')
         GROUP BY year`;
