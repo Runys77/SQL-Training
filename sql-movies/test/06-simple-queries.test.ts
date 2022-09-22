@@ -132,7 +132,7 @@ describe("Simple Queries", () => {
       const query = `SELECT COUNT(rating) AS count, user_id 
       FROM movie_ratings 
       GROUP BY user_id ORDER BY count 
-      DESC LIMIT 3`;;
+      DESC LIMIT 3`;
       const result = await db.selectMultipleRows(query);
 
       expect(result).toEqual([
